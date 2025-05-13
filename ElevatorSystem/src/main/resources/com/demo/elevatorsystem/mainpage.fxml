@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<!-- 主界面采用边框布局，便于分区管理 -->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.demo.elevatorsystem.MainpageController">
+
+    <!-- 顶部区域：系统标题 -->
+    <top>
+        <Text text="电梯调度系统 - 20层 5部电梯" style="-fx-font-size: 20; -fx-font-weight: bold;"
+              BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- 中央区域：核心功能布局 -->
+    <center>
+        <HBox spacing="30" alignment="CENTER_LEFT" style="-fx-padding: 20;">
+            <!-- 左侧楼层按钮列 -->
+            <VBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 0 20 0 0;">
+                <Text text="楼层控制" style="-fx-font-weight: bold;"/>
+                <!-- 动态生成的楼层按钮容器，20层按钮将垂直排列 -->
+                <VBox fx:id="floorButtons" spacing="5"/>
+            </VBox>
+
+            <!-- 右侧电梯列容器，用于放置5部电梯的视觉元素 -->
+            <HBox spacing="15" fx:id="elevatorColumns"/>
+        </HBox>
+    <!-- 底部状态栏：显示系统运行状态 -->
+    </center>
+
+    <!-- 底部状态栏：显示系统运行状态 -->
+    <bottom>
+        <Text fx:id="statusText" text="系统就绪"/>
+    </bottom>
+</BorderPane>
